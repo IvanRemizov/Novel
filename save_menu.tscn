@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://b57pris7jci2c"]
+
+[ext_resource type="Script" path="res://panel.gd" id="1_6d6hd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_m4sms"]
+
+[node name="Save_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="save_0" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 90.0
+script = ExtResource("1_6d6hd")
+
+[node name="MarginContainer" type="MarginContainer" parent="save_0"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="TextureRect" type="TextureRect" parent="save_0/MarginContainer"]
+custom_minimum_size = Vector2(120, 49.96)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = SubResource("NoiseTexture2D_m4sms")
+expand_mode = 1
+
+[node name="date" type="Label" parent="save_0/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+
+[node name="title" type="Label" parent="save_0/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Новое сохранение"
+
+[node name="Button" type="Button" parent="save_0"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 90.0
+
+[connection signal="pressed" from="save_0/Button" to="save_0" method="_on_button_pressed"]

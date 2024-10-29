@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="SaveFile" load_steps=2 format=3 uid="uid://v1h0p7gg1ysf"]
+
+[ext_resource type="Script" path="res://save.gd" id="1_0saas"]
+
+[resource]
+script = ExtResource("1_0saas")
+num_dialog = 0

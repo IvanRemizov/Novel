@@ -1,21 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://rhu1ve0ndls2"]
+[gd_scene load_steps=5 format=3 uid="uid://rhu1ve0ndls2"]
 
 [ext_resource type="Script" path="res://node_2d.gd" id="1_g3b5a"]
-[ext_resource type="Texture2D" uid="uid://eyrjx8fcqav4" path="res://icon.svg" id="2_sirvr"]
+[ext_resource type="Texture2D" uid="uid://hvufq38tdaq" path="res://f00c188c3c3ee5e0010736e7b671e989.png" id="2_5fhfe"]
+[ext_resource type="Texture2D" uid="uid://dyuqr1k86gj50" path="res://FNastia.png" id="3_sgeq3"]
+[ext_resource type="Theme" uid="uid://b3oy5i7ma0415" path="res://main_theme.tres" id="4_uhlrw"]
 
 [node name="Node2D" type="Node2D" node_paths=PackedStringArray("RichText")]
 script = ExtResource("1_g3b5a")
 RichText = NodePath("Control/MainText")
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(573.5, 325.5)
-scale = Vector2(8.96094, 5.08594)
-texture = ExtResource("2_sirvr")
+position = Vector2(585, 327)
+scale = Vector2(1.175, 1.175)
+texture = ExtResource("2_5fhfe")
 
 [node name="character" type="Sprite2D" parent="."]
-position = Vector2(595, 384)
-scale = Vector2(2.14844, 3.34766)
-texture = ExtResource("2_sirvr")
+position = Vector2(567, 419)
+scale = Vector2(0.166514, 0.166514)
+texture = ExtResource("3_sgeq3")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -37,6 +39,7 @@ offset_right = -37.0
 offset_bottom = -160.0
 grow_horizontal = 0
 grow_vertical = 0
+text = "next"
 
 [node name="MainText" type="RichTextLabel" parent="Control"]
 custom_minimum_size = Vector2(1100, 150)
@@ -51,7 +54,25 @@ offset_top = -150.0
 offset_right = 400.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_uhlrw")
 text = "Начальный текст
 "
 
+[node name="save_button" type="Button" parent="Control/MainText"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -63.5
+offset_top = -58.0
+offset_right = -13.5
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "save"
+
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/MainText/save_button" to="." method="_on_save_button_pressed"]
