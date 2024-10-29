@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://rhu1ve0ndls2"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_g3b5a"]
+[ext_resource type="Texture2D" uid="uid://eyrjx8fcqav4" path="res://icon.svg" id="2_sirvr"]
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("RichText")]
+script = ExtResource("1_g3b5a")
+RichText = NodePath("Control/MainText")
+
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(573.5, 325.5)
+scale = Vector2(8.96094, 5.08594)
+texture = ExtResource("2_sirvr")
+
+[node name="character" type="Sprite2D" parent="."]
+position = Vector2(595, 384)
+scale = Vector2(2.14844, 3.34766)
+texture = ExtResource("2_sirvr")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1151.0
+offset_bottom = 649.0
+
+[node name="Button" type="Button" parent="Control"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -137.0
+offset_top = -210.0
+offset_right = -37.0
+offset_bottom = -160.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="MainText" type="RichTextLabel" parent="Control"]
+custom_minimum_size = Vector2(1100, 150)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -150.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Начальный текст
+"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
