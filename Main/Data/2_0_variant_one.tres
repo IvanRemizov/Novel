@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="MainText" load_steps=2 format=3 uid="uid://u6rsw1a5sanv"]
+
+[ext_resource type="Script" path="res://Main/resurse/resurse_dialog.gd" id="1_41opd"]
+
+[resource]
+script = ExtResource("1_41opd")
+DialogTitle = "Первый вариант"
+DialogNum = "2_0"
+Text = "фывфы"
+Requirements = {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 2,
+"Nastya": 0,
+"Sonya": 0
+}
+choise = {
+"0": {
+"point": {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+},
+"text_choise": ""
+},
+"1": {
+"point": {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+},
+"text_choise": ""
+},
+"2": {
+"point": {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+},
+"text_choise": ""
+},
+"3": {
+"point": {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+},
+"text_choise": ""
+},
+"4": {
+"point": {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+},
+"text_choise": ""
+}
+}

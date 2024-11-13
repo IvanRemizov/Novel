@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://rhu1ve0ndls2"]
 
-[ext_resource type="Script" path="res://node_2d.gd" id="1_g3b5a"]
+[ext_resource type="Script" path="res://main.gd" id="1_g3b5a"]
 [ext_resource type="Texture2D" uid="uid://hvufq38tdaq" path="res://f00c188c3c3ee5e0010736e7b671e989.png" id="2_5fhfe"]
 [ext_resource type="Texture2D" uid="uid://dyuqr1k86gj50" path="res://FNastia.png" id="3_sgeq3"]
 [ext_resource type="Theme" uid="uid://b3oy5i7ma0415" path="res://main_theme.tres" id="4_uhlrw"]
 
-[node name="Node2D" type="Node2D" node_paths=PackedStringArray("RichText")]
+[node name="main" type="Node2D" node_paths=PackedStringArray("RichText")]
 script = ExtResource("1_g3b5a")
-RichText = NodePath("Control/MainText")
+RichText = NodePath("Control/MarginContainer/VBoxMain/VBoxText/MainText")
 
 [node name="background" type="Sprite2D" parent="."]
 position = Vector2(585, 327)
@@ -25,40 +25,42 @@ anchors_preset = 0
 offset_right = 1151.0
 offset_bottom = 649.0
 
-[node name="Button" type="Button" parent="Control"]
-custom_minimum_size = Vector2(100, 50)
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -137.0
-offset_top = -210.0
-offset_right = -37.0
-offset_bottom = -160.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "next"
-
-[node name="MainText" type="RichTextLabel" parent="Control"]
-custom_minimum_size = Vector2(1100, 150)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -150.0
-offset_right = 400.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxMain" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="VBoxChoise" type="VBoxContainer" parent="Control/MarginContainer/VBoxMain"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="VBoxText" type="VBoxContainer" parent="Control/MarginContainer/VBoxMain"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MainText" type="RichTextLabel" parent="Control/MarginContainer/VBoxMain/VBoxText"]
+custom_minimum_size = Vector2(1100, 150)
+layout_mode = 2
+size_flags_vertical = 8
 theme = ExtResource("4_uhlrw")
+bbcode_enabled = true
 text = "Начальный текст
 "
 
-[node name="save_button" type="Button" parent="Control/MainText"]
+[node name="save_button" type="Button" parent="Control/MarginContainer/VBoxMain/VBoxText/MainText"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 1
 anchors_preset = 3
@@ -74,5 +76,20 @@ grow_horizontal = 0
 grow_vertical = 0
 text = "save"
 
-[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Control/MainText/save_button" to="." method="_on_save_button_pressed"]
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxMain/VBoxText/MainText"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_top = 10.0
+offset_right = -14.0
+offset_bottom = 60.0
+grow_horizontal = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "next"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxMain/VBoxText/MainText/save_button" to="." method="_on_save_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxMain/VBoxText/MainText/Button" to="." method="_on_button_pressed"]

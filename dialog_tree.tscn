@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://145cfy86apxt"]
+
+[ext_resource type="Script" path="res://dialog_tree.gd" id="1_id2ix"]
+
+[node name="dialog_tree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_id2ix")
+
+[node name="GraphEdit" type="GraphEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scroll_offset = Vector2(-1147, -648)
+grid_pattern = 1
+right_disconnects = true

@@ -1,9 +1,9 @@
 extends Node
-var text : Array[Resource]
+var dialog_main_info = loadresurse("res://Main/Data/")
+var save = loadresurse("res://Main/Save")
 @onready var num_dialog
 
 func _ready() -> void:
-	text = loadresurse("res://Main/Data/")
 	loadfile()
 	
 func loadresurse(path):
@@ -17,7 +17,6 @@ func loadresurse(path):
 	return res
 	
 func loadfile():
-	var save = loadresurse("res://Main/Save")
 	if len(save) == 0:
 		num_dialog = 0
 	else:

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bthlpahmocmfp"]
+
+[ext_resource type="Script" path="res://row_choise.gd" id="1_bvh7o"]
+
+[node name="row_choise" type="Button" node_paths=PackedStringArray("button")]
+custom_minimum_size = Vector2(150, 40)
+anchors_preset = -1
+anchor_right = 0.13
+anchor_bottom = 0.062
+offset_right = 0.23999
+offset_bottom = -0.176003
+script = ExtResource("1_bvh7o")
+button = NodePath(".")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
