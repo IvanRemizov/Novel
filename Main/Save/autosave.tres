@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="SaveFile" load_steps=2 format=3 uid="uid://chpic8sfulrkb"]
+
+[ext_resource type="Script" path="res://Main/resurse/resurse_save.gd" id="1_uwohf"]
+
+[resource]
+script = ExtResource("1_uwohf")
+save_name = ""
+num_phrase = 0
+num_chapter = 0
+num_var_chapter = 0
+time_save = ""
+points = {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+}

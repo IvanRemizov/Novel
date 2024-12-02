@@ -6,7 +6,7 @@
 script = ExtResource("1_41opd")
 DialogTitle = "Первый вариант"
 DialogNum = "2_0"
-Text = "фывфы"
+Text = "0.123..#1...$#2...#3...#4...#5...#6...#7...#8...#9...$#101123rkjg#123#asd#"
 Requirements = {
 "Dasha": 0,
 "Ira": 0,

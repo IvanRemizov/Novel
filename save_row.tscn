@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxu5pgy8xbxa1"]
+
+[ext_resource type="Script" path="res://save_row.gd" id="1_tt5hb"]
+
+[sub_resource type="Gradient" id="Gradient_a8aqh"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xe3a5"]
+gradient = SubResource("Gradient_a8aqh")
+
+[node name="save_row" type="Panel" node_paths=PackedStringArray("save_name", "chapter_name", "save_time")]
+custom_minimum_size = Vector2(550, 170)
+offset_right = 550.0
+offset_bottom = 170.0
+script = ExtResource("1_tt5hb")
+save_name = NodePath("MarginContainer/HBoxContainer/VBoxContainer/save_name")
+chapter_name = NodePath("MarginContainer/HBoxContainer/VBoxContainer/chapter_name")
+save_time = NodePath("MarginContainer/HBoxContainer/VBoxContainer/save_time")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 150.0
+offset_bottom = 168.0
+scale = Vector2(0.997289, 1)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = SubResource("GradientTexture2D_xe3a5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="save_name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Название сохранения"
+
+[node name="chapter_name" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Название сохраненной главы"
+
+[node name="save_time" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "Время сохранения
+"
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+size_flags_vertical = 8

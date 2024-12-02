@@ -19,6 +19,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scroll_offset = Vector2(-1147, -648)
 grid_pattern = 1
 right_disconnects = true

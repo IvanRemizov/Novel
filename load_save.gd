@@ -1,10 +1,6 @@
 extends Node
 var dialog_main_info = loadresurse("res://Main/Data/")
 var save = loadresurse("res://Main/Save")
-@onready var num_dialog
-
-func _ready() -> void:
-	loadfile()
 	
 func loadresurse(path):
 	var dir = DirAccess.open(path)
@@ -15,15 +11,8 @@ func loadresurse(path):
 	for i in len(file_name):
 		res[i] = ResourceLoader.load(dir_name + "/" + file_name[i])
 	return res
-	
-func loadfile():
-	if len(save) == 0:
-		num_dialog = 0
-	else:
-		num_dialog = save[0].num_dialog
 
-func savefile(name_button, num_dialog_save):
-	var savefile = SaveFile.new()
-	loadfile()
-	savefile.num_dialog = num_dialog_save
-	ResourceSaver.save(savefile, "res://Main/Save/"+ name_button +".tres")
+func savefile(savefile):
+	ResourceSaver.save(savefile, "res://Main/Save/"+ "autosave" +".tres")
+	print("Файл сохранен!")
+	print(savefile)

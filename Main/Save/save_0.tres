@@ -4,4 +4,12 @@
 
 [resource]
 script = ExtResource("1_0saas")
-num_dialog = 0
+num_chapter = 0
+num_var_chapter = 0
+points = {
+"Dasha": 0,
+"Ira": 0,
+"Liza": 0,
+"Nastya": 0,
+"Sonya": 0
+}
